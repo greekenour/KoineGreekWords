@@ -2,7 +2,7 @@
 import { create } from "apisauce";
 
 export const api = create({
-      baseUrl: 'http://localhost:44361/',
+      baseUrl: 'https://localhost:44361',
       headers: {
         'Content-Type': 'application/json'
         }

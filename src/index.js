@@ -5,9 +5,7 @@ import KOINE from './components/KOINE';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <KOINE />
-  </React.StrictMode>,
+    <KOINE />,
   document.getElementById('root')
 );
 

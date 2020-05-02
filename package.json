@@ -1,9 +1,9 @@
 {
   "name": "koine-greek-api",
+  "proxy": "http://localhost:63463/",
   "homepage": "https://github.com/greekenour/KoineGreekWords.git",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:44361/",
   "secure": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

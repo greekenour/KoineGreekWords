@@ -1,21 +1,53 @@
-import React from "react";
-import { Col, Container, Row } from "reactstrap";
+import React, { useState } from "react";
+import {  
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    NavbarText} from "reactstrap";
 
 function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
     return (
-        <Container fluid className="header">
-            <Row className="h-100">
-                <Col md="6" className="d-none d-md-flex">
-                    <div>
-                        <h5>Koine Greek Vocabulary</h5>
-                    </div>
-                </Col>
-
-                <Col xs="12" md="6">
-                    
-                </Col>
-            </Row>
-        </Container>
+        <>
+        <Navbar color="light" light expand="md">
+            <NavbarBrand href="/">Koine Greek Vocabulary</NavbarBrand>
+            <NavbarToggler onClick={toggle} />
+            <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+                <NavItem>
+                <NavLink href="/">Vocabulary</NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink href="https://github.com/greekenour/KoineGreekCoreWebApi" target="_blank">GitHub</NavLink>
+                </NavItem>
+                <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                        Lists
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                        <DropdownItem>
+                            Words by Frequency
+                        </DropdownItem>
+                        <DropdownItem>
+                            Words by Book
+                        </DropdownItem>
+                        <DropdownItem divider />
+                    </DropdownMenu>
+                </UncontrolledDropdown>
+            </Nav>
+            <NavbarText>2 Timothy 2.15</NavbarText>
+            </Collapse>
+        </Navbar>
+        </>
     );
 };
 
