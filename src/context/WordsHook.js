@@ -3,18 +3,18 @@ import { generateEmptyWords } from "../tools/Utilities";
 import * as api from "../api/KoineWordsApi";
 
 export function useKoineWords() {
-    const [words, setWords] = useState(generateEmptyWords());
+  const [words, setWords] = useState(generateEmptyWords());
+  debugger;
+  const getWordData = useCallback(async () => {
+    const res = await api.getWordData();
+    setWords(res);
+  }, []);
 
-    const getWordData = useCallback(async () => {
-        const res = await api.getWordData();
-        setWords(res)
-      }, []); 
-    
-    useEffect(() => {
-        getWordData();
-    }, [getWordData]);
+  useEffect(() => {
+    getWordData();
+  }, [getWordData]);
 
-    return {
-        words
-    };
+  return {
+    words,
+  };
 }

@@ -1,5 +1,10 @@
 export function generateEmptyWords() {
-    return {
-        summary: ""
-    }
+  var arr = [
+    {
+      name: "",
+      definition: "",
+      id: "1000",
+    },
+  ];
+  return arr;
 }
